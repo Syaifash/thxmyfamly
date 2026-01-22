@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terima Kasih Keluargaku</title>
+
+<style>
+*{box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+  color:#fff;
+}
+
+.card{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  border-radius:18px;
+  padding:30px;
+  width:90%;
+  max-width:420px;
+  text-align:center;
+  box-shadow:0 0 30px rgba(0,0,0,.6);
+  animation:fadeIn 1s ease;
+}
+
+.photo{
+  width:150px;height:150px;
+  margin:0 auto 20px;
+  border-radius:50%;
+  overflow:hidden;
+  border:3px solid rgba(255,255,255,.4);
+  box-shadow:0 0 25px rgba(255,255,255,.3);
+}
+
+.photo img{
+  width:100%;height:100%;object-fit:cover;
+}
+
+h1{margin:10px 0 5px;font-size:26px}
+.line{
+  width:60px;height:3px;
+  margin:15px auto;
+  background:linear-gradient(to right,#00c6ff,#0072ff);
+  border-radius:10px;
+}
+
+p{font-size:15px;line-height:1.7;opacity:.95}
+
+.menu{
+  margin-top:25px;
+  display:flex;
+  gap:15px;
+  flex-direction:column;
+}
+
+.btn{
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+  color:#fff;
+  background:linear-gradient(to right,#ff416c,#ff4b2b);
+  transition:.3s;
+}
+
+.btn.anak{
+  background:linear-gradient(to right,#36d1dc,#5b86e5);
+}
+
+.btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 15px rgba(255,255,255,.4);
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.modal-box{
+  background:rgba(20,20,40,.95);
+  border-radius:18px;
+  padding:25px;
+  max-width:420px;
+  width:100%;
+  text-align:center;
+  animation:fadeIn .6s ease;
+}
+
+.modal-box h2{margin-bottom:10px}
+.modal-box p{font-size:15px;line-height:1.8}
+
+.close{
+  margin-top:20px;
+  padding:10px 25px;
+  border:none;
+  border-radius:25px;
+  background:#25d366;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="photo">
+    <img src="https://files.catbox.moe/iye5oi.jpg" alt="Keluarga">
+  </div>
+
+  <h1>Terima Kasih 🤍</h1>
+  <div class="line"></div>
+
+  <p>
+    Terima kasih atas kebahagiaan luar biasa  
+    yang diberikan oleh anak dan istri tercinta.  
+    Kalian adalah arti pulang dan alasan untuk bertahan.
+  </p>
+
+  <div class="menu">
+    <button class="btn" onclick="openIstri()">💖 SUSILAWATI</button>
+    <button class="btn anak" onclick="openAnak()">👶 MUHAMMAD HAFIDZ</button>
+  </div>
+</div>
+
+<!-- MODAL ISTRI -->
+<div class="modal" id="istri">
+  <div class="modal-box">
+    <h2>💖 Untuk Istriku, Susilawati</h2>
+    <p>
+      Terima kasih telah menjadi pendamping hidup yang setia.  
+      Dalam lelah, kamu tetap kuat.  
+      Dalam susah, kamu tetap bertahan.  
+      Doamu, sabarmu, dan cintamu adalah cahaya  
+      yang menuntunku untuk terus menjadi suami yang lebih baik.
+    </p>
+    <button class="close" onclick="closeModal()">Tutup</button>
+  </div>
+</div>
+
+<!-- MODAL ANAK -->
+<div class="modal" id="anak">
+  <div class="modal-box">
+    <h2>👶 Untuk Anakku, Muhammad Hafidz</h2>
+    <p>
+      Nak, kehadiranmu adalah hadiah terindah dalam hidup ini.  
+      Senyummu menghapus lelah,  
+      tawamu menyembuhkan luka.  
+      Ayah akan selalu berusaha menjadi pelindung,  
+      pembimbing, dan tempat pulang untukmu.
+    </p>
+    <button class="close" onclick="closeModal()">Tutup</button>
+  </div>
+</div>
+
+<script>
+function openIstri(){
+  document.getElementById("istri").style.display="flex";
+}
+function openAnak(){
+  document.getElementById("anak").style.display="flex";
+}
+function closeModal(){
+  document.getElementById("istri").style.display="none";
+  document.getElementById("anak").style.display="none";
+}
+</script>
+
+</body>
+</html>
