@@ -102,9 +102,6 @@ p{font-size:15px;line-height:1.7;opacity:.95}
   animation:fadeIn .6s ease;
 }
 
-.modal-box h2{margin-bottom:10px}
-.modal-box p{font-size:15px;line-height:1.8}
-
 .close{
   margin-top:20px;
   padding:10px 25px;
@@ -123,11 +120,16 @@ p{font-size:15px;line-height:1.7;opacity:.95}
 </style>
 </head>
 
-<body>
+<body onclick="playMusic()">
+
+<!-- AUDIO HIDDEN -->
+<audio id="bgMusic" autoplay loop muted>
+  <source src="https://files.catbox.moe/95j7wn.mp3" type="audio/mpeg">
+</audio>
 
 <div class="card">
   <div class="photo">
-    <img src="https://files.catbox.moe/iye5oi.jpg" alt="Keluarga">
+    <img src="https://files.catbox.moe/iye5oi.jpg">
   </div>
 
   <h1>Terima Kasih 🤍</h1>
@@ -151,10 +153,8 @@ p{font-size:15px;line-height:1.7;opacity:.95}
     <h2>💖 Untuk Istriku, Susilawati</h2>
     <p>
       Terima kasih telah menjadi pendamping hidup yang setia.  
-      Dalam lelah, kamu tetap kuat.  
-      Dalam susah, kamu tetap bertahan.  
-      Doamu, sabarmu, dan cintamu adalah cahaya  
-      yang menuntunku untuk terus menjadi suami yang lebih baik.
+      Kesabaranmu adalah doa yang hidup,  
+      cintamu adalah kekuatan yang tak pernah habis.
     </p>
     <button class="close" onclick="closeModal()">Tutup</button>
   </div>
@@ -165,17 +165,22 @@ p{font-size:15px;line-height:1.7;opacity:.95}
   <div class="modal-box">
     <h2>👶 Untuk Anakku, Muhammad Hafidz</h2>
     <p>
-      Nak, kehadiranmu adalah hadiah terindah dalam hidup ini.  
-      Senyummu menghapus lelah,  
-      tawamu menyembuhkan luka.  
-      Ayah akan selalu berusaha menjadi pelindung,  
-      pembimbing, dan tempat pulang untukmu.
+      Nak, kehadiranmu adalah alasan ayah kuat.  
+      Setiap langkahmu adalah doa,  
+      setiap senyummu adalah harapan masa depan.
     </p>
     <button class="close" onclick="closeModal()">Tutup</button>
   </div>
 </div>
 
 <script>
+const music = document.getElementById("bgMusic");
+
+function playMusic(){
+  music.muted = false;
+  music.play();
+}
+
 function openIstri(){
   document.getElementById("istri").style.display="flex";
 }
